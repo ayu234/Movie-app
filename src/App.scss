@@ -1,0 +1,139 @@
+body{
+  background-color: black;
+}
+
+h1, h2,p {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.white{
+  color: #ffff;
+}
+
+.w-150{
+  width: 140px;
+}
+
+.detail-para{
+  width: 75%;
+  margin: auto;
+}
+
+.margin-1em{
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.mt-5{
+  margin-top: 3rem;
+}
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  
+    .movie-thumbnail {
+      img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  .movie-details {
+    text-align: center;
+  
+    img {
+      width: 200px;
+      height: auto;
+    }
+  }
+  
+  // src/App.scss
+
+.star {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('/star.png');
+  background-size: cover;
+}
+
+.star.filled {
+  background-image: url('/star.png');
+}
+
+.movie-list {
+  display: flex;
+  overflow-x: scroll;
+  padding: 10px;
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+}
+
+.movie-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+
+.movie-thumbnail {
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.movie-thumbnail:last-child {
+  margin-right: 0;
+}
+
+/* MoviePoster.css */
+.poster-container {
+  padding: 20px;
+}
+
+.movie-thumbnail {
+  margin: 0px 0px 0px 34px;
+}
+
+.thumbnail-inner {
+
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.thumbnail-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .thumbnail-inner {
+    width: 229px;
+    height: 330px;
+  }
+}
+
+@media (max-width: 768px) {
+  .thumbnail-inner {
+    width: 296px;
+    height: 430px;
+  }
+}
+
+@media (max-width: 576px) {
+  .thumbnail-inner {
+    width: 314px;
+    height: 436px;
+  }
+}
+
+
+/* Add space between divs in the slider */
+/* Responsive Styles */
+
