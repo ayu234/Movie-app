@@ -14,7 +14,7 @@ const MoviePoster = () => {
   useEffect(() => {
     axios
       .get(
-        `http://www.omdbapi.com/?apikey=${API_KEY}&s=action&type=movie&plot=short&r=json&totalResults=5`
+        `http://www.omdbapi.com/?apikey=${API_KEY}&s=comedy&type=movie&plot=short&r=json&totalResults=5`
       )
       .then((response) => setMovies(response.data.Search))
       .catch((error) => console.error(error));
@@ -33,31 +33,40 @@ const MoviePoster = () => {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1200, // Extra large screens (xl)
         settings: {
           slidesToShow: 3,
+          slidesToScroll: 3,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 992, // Large screens (lg)
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 768, // Medium screens (md)
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480, // Small screens (sm)
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
   };
-
   return (
     <div className="poster-container">
       {/* Container for posters */}
       <div>
-        <h1 className="white">Trending Now</h1>
+        <h1 className="white home-h1">Trending Now</h1>
         <Slider {...settings}>
           {movies.map((movie) => (
             <div key={movie.imdbID} className="movie-thumbnail">
@@ -71,7 +80,7 @@ const MoviePoster = () => {
         </Slider>
       </div>
       <div className="mt-5">
-        <h1 className="white">Award Wining</h1>
+        <h1 className="white home-h1">Award Wining</h1>
         <Slider {...settings}>
           {trending.map((movie) => (
             <div key={movie.imdbID} className="movie-thumbnail">

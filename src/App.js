@@ -8,9 +8,8 @@ import './App.scss';
 const App = () => {
   return (
     <Router>
-      <header>
+      <header className="poster-container">
         <img src="/logo.png" className="w-150 margin-1em" alt="logo" />
-        {/* Add any other header content here */}
       </header>
 
       <Route exact path="/">

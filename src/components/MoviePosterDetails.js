@@ -24,7 +24,10 @@ const MoviePosterDetails = () => {
           <img src={movie.Poster} alt={movie.Title} />
           <h2 className="white">{movie.Title}</h2>
           <p className="white detail-para">{movie.Plot}</p>
-          <p className="white">Rating: {movie.imdbRating}</p>
+          <p className="white rate">
+            Rating : <img src="/star.png" className="rating-s" alt="rating" />{' '}
+            {movie.imdbRating}
+          </p>
         </React.Fragment>
       ) : (
         <p>Loading...</p>
